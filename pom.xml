@@ -15,6 +15,13 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat8-war-runner 
+   <dependency>
+     <groupId>org.apache.tomcat.maven</groupId>
+     <artifactId>tomcat8-war-runner</artifactId>
+     <version>3.0-r1756463</version>
+   </dependency>
+     dont work -->
   </dependencies>
   <build>
     <finalName>webappRunnerSample</finalName>
@@ -40,6 +47,28 @@
                 </execution>
             </executions>
         </plugin>
+<!--
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId>
+  <executions>
+    <execution>
+      <id>build-exec-war</id>
+      <configuration>
+        <path>/app/v1</path>
+        <mainClass>org.apache.tomcat.maven.runner.Tomcat8RunnerCli</mainClass>
+        <extraDependencies>
+          <extraDependency>
+            <groupId>com.nitorcreations</groupId>
+            <artifactId>tomcat8-war-runner</artifactId>
+            <version>1.0</version>
+          </extraDependency>
+        </extraDependencies>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+-->
     </plugins>
   </build>
 </project>
